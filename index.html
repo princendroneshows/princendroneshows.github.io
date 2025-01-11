@@ -68,7 +68,7 @@
         <div class="start-section">
             <div class="overlay-text">
                 <h1>Princen droneshows</h1>
-                <a href="contact.html #boeken" class="cta-button">BOEK NU</a>
+                <a href="javascript:void(0);" onclick="navigateAndScroll()" class="cta-button">BOEK NU</a>
             </div>
             <video width="100%" height="500px" autoplay muted>
                 <source src="" type="video/mp4">
@@ -89,6 +89,23 @@
         </section>
     </main>
 </body>
+
+
+<script>
+        function navigateAndScroll() {
+        // Verander de URL naar de pagina die je wilt
+        window.location.href = "contact.html";
+
+        // Gebruik een timeout om ervoor te zorgen dat de pagina eerst geladen is voordat we scrollen
+        setTimeout(function() {
+            // Scroll naar de sectie op de nieuwe pagina
+            const section = document.getElementById('boeken');
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 500); // 500ms wachttijd voor de pagina om te laden
+    }
+</script>
 
 <script src="main.js"></script>
 
