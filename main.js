@@ -101,14 +101,18 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
 
 //boek button
-window.onload = function() {
-    // Controleer of er een hash in de URL zit
-    const hash = window.location.hash;
-    if (hash) {
-        // Zoek het element met de id die overeenkomt met de hash en scroll er naartoe
-        const targetSection = document.querySelector(hash);
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+    window.onload = function() {
+        // Controleer of er een hash in de URL zit
+        const hash = window.location.hash;
+        if (hash) {
+            // Zoek het element met de id die overeenkomt met de hash
+            const targetSection = document.querySelector(hash);
+            if (targetSection) {
+                // Scroll naar de sectie
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Verwijder de hash uit de URL zonder de pagina te verversen
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+            }
         }
     }
-}
