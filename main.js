@@ -96,3 +96,19 @@ document.getElementById('contact-form').addEventListener('submit', function(even
           alert('Er is een fout opgetreden: ' + JSON.stringify(error));
       });
 });
+
+
+
+
+//boek button
+window.onload = function() {
+    // Controleer of er een hash in de URL zit
+    const hash = window.location.hash;
+    if (hash) {
+        // Zoek het element met de id die overeenkomt met de hash en scroll er naartoe
+        const targetSection = document.querySelector(hash);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
