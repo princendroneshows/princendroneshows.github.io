@@ -45,7 +45,7 @@
                         <tr>
                             <td>
                                 <p class="text">e-mail</p>
-                                <input type="text" name="user_email" placeholder="Uw e-mail" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
+                                <input type="text" name="user_email" placeholder="Uw mailadress" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
                             </td>
                             <td>
                                 <p class="text">telefoonnummer</p>
@@ -104,6 +104,16 @@
         dateFormat: "Y-m-d", // Formaat: Jaar-Maand-Dag
         minDate: "today", // Start bij vandaag
     });
+</script>
+
+<script>
+    window.onload = function() {
+        // Scroll automatisch naar de sectie zodra de pagina geladen is
+        const section = document.getElementById('section2');
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 </script>
 
 </html>
