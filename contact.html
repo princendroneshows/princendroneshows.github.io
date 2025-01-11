@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" type="icon" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
@@ -108,12 +109,21 @@
 
 <script>
     window.onload = function() {
-        // Scroll automatisch naar de sectie zodra de pagina geladen is
-        const section = document.getElementById('section2');
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+        // Kijk of er een fragment in de URL is
+        const hash = window.location.hash;
+        
+        // Als er een hash is (bijv. #section2), scroll dan naar het element met dat id
+        if (hash) {
+            // Zoek het element met de id gelijk aan het fragment
+            const section = document.querySelector(hash);
+            
+            // Als dat element bestaat, scroll dan naar dat element
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
         }
-    }
+    };
 </script>
+
 
 </html>

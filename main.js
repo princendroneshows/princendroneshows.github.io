@@ -96,5 +96,3 @@ document.getElementById('contact-form').addEventListener('submit', function(even
           alert('Er is een fout opgetreden: ' + JSON.stringify(error));
       });
 });
-
-
