@@ -3,75 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactformulier</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="main.css">
-    <style>
-        .form-container {
-            background: black;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 50%;
-        }
-        input, textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid white;
-            background-color: rgb(35, 35, 35);
-            border-radius: 10px;
-            color: white;
-        }
-        textarea[name="message"] {
-            width: 100%;
-            max-width: 100%;
-            min-height: 40px;
-            height: 100px;
-            resize: vertical;
-            box-sizing: border-box;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-        .apply-button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        table, th, td {
-            border-collapse: collapse;
-            border: 1px solid white;
-        }
-        th, td {
-            width: 50%;
-            padding: 5%;
-        }
-        .mail {
-            margin-top: 40%;
-        }
-    </style>
 </head>
+
 <body>
 <div class="circle"></div>
 
 <br><br><br><br><br><br><br><br><br><br>
+
 <table style="width: 100%;" class="table1">
     <tr>
-        <td>
-            <p class="contact-us-text">mail ons</p>
-            <a href="mailto:princen.droneshows@gmail.com" class="mail">Stuur een e-mail</a>    
+        <td style="width: 40%;">
+            <img src="mail_icon.png" alt="mail_icon" width="30%">
+            <br><br>
+            <a href="mailto:princen.droneshows@gmail.com" class="mail" style="color: white; font-size: 130%;">Neem contact op via mail</a>
+            <br><br><br><br><br><br><br>
+            <img src="telefoon_icon.png" alt="mail_icon" width="30%">
+            <br><br>
+            <a href="tel:+32478820272" class="phone-link" style="color: white; font-size: 130%;">Neem contact op via telefoon: +32 4 78820272</a>
         </td>
-        <td>
+        <td style="width: 60%;">
             <div class="form-container">
+                <form id="contact-form">
                     <table style="width: 200%" id="boeken">
                         <tr>
                             <th colspan="2">
@@ -91,11 +45,11 @@
                         <tr>
                             <td>
                                 <p class="text">e-mail</p>
-                                <input type="email" name="user_email" placeholder="Uw e-mail" required>
+                                <input type="text" name="user_email" placeholder="Uw e-mail" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
                             </td>
                             <td>
                                 <p class="text">telefoonnummer</p>
-                                <input type="tel" name="user_phone" placeholder="Uw telefoonnummer" pattern="[0-9]{10}" required>
+                                <input type="text" name="user_phone" placeholder="Uw telefoonnummer" pattern="[0-9]{10}" required>
                             </td>
                         </tr>
                         <tr>
@@ -104,9 +58,9 @@
                                 <input type="text" name="event_location" placeholder="Locatie van evenement" required>
                             </td>
                             <td>
-                            <p class="text">datum van evenement</p>
-                                <div class="date-picker-container">
-                                    <input type="date" id="event_date" name="event_date" required>
+                                <div class="form-group">
+                                    <p class="text">datum van evenement</p>
+                                    <input type="text" id="event-date" name="event-date" required>
                                 </div>
                             </td>
                         </tr>
@@ -122,6 +76,7 @@
                             </td>
                         </tr>
                     </table>
+                </form>
             </div>
         </td>
     </tr>
@@ -129,10 +84,26 @@
 
 </div>
 
+<!-- voor verzenden van gegevens -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<!-- normale wijzing naar script -->
 <script src="main.js"></script>
+
+<!-- Flatpickr stylesheet -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Flatpickr script -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 </body>
+
+<script>
+    // Activeer Flatpickr op het input veld
+    flatpickr("#event-date", {
+        dateFormat: "Y-m-d", // Formaat: Jaar-Maand-Dag
+        minDate: "today", // Start bij vandaag
+    });
+</script>
+
 </html>

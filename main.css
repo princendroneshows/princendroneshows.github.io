@@ -214,3 +214,92 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+
+.form-container {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50%;
+}
+input, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgb(35, 35, 35);
+    border-radius: 5px;
+    color: white;
+}
+textarea[name="message"] {
+    width: 100%;
+    max-width: 100%;
+    min-height: 40px;
+    height: 100px;
+    resize: vertical;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.apply-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+table, th, td {
+    border-collapse: collapse;
+}
+th, td {
+    width: 50%;
+    padding: 5%;
+}
+
+
+
+
+
+
+
+
+.form-group {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgb(35, 35, 35); /* Donkere achtergrond */
+    color: white; /* Witte tekst */
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border: 1px solid red;
+    background-color: rgb(50, 50, 50);
+}

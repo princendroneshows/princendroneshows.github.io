@@ -96,15 +96,3 @@ document.getElementById('contact-form').addEventListener('submit', function(even
           alert('Er is een fout opgetreden: ' + JSON.stringify(error));
       });
 });
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  flatpickr("#event_date", {
-      altInput: true, // Laat een mooier invoerveld zien
-      altFormat: "F j, Y", // Toon een leesbare datum (bijvoorbeeld: January 1, 2025)
-      dateFormat: "Y-m-d", // Formaat voor de backend
-      minDate: "today", // Blokkeer eerdere datums
-  });
-});
