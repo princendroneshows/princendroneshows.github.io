@@ -125,5 +125,20 @@
     };
 </script>
 
+<script>
+    // Kijk of er een query string is in de URL (bijvoorbeeld ?scrollTo=section2)
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const scrollTo = urlParams.get('scrollTo'); // Haal de waarde van 'scrollTo' op
+
+        if (scrollTo) {
+            const section = document.getElementById(scrollTo); // Zoek de sectie met dat ID
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' }); // Scroll naar die sectie
+            }
+        }
+    };
+</script>
+
 
 </html>
