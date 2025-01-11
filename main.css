@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*Voor muisaanwijzer animatie*/
+.circle {
+    --circle-size: 40px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 100;
+}
+
+body {
+    margin: auto;
+    height: 3000px;
+    background: black;
+}
+
+/*Voor de header van de website*/
+.header {
+    background: none;
+    height: 100px;
+    transition: all 0.5s;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-scrolled {
+    background: rgb(39, 39, 39);
+}
+
+.container {
+    width: 98%;
+    height: 100%;
+    margin: auto;
+}
+
+.container-header{
+    display: flex;
+    align-items: center;
+}
+
+/*Voor het logo van de website*/
+.logo-container{
+    height: 80px;
+    width: 300px;
+    margin-left: 5%;
+}
+
+.logoicoon {
+    width: 90px;
+    height: 80px;
+}
+
+.logoicoon:hover {
+    border: 1px solid rgb(39, 39, 39);
+}
+
+/* Algemene stijl voor alle containers (HOME, PORTFOLIO, CONTACT, ABOUT US) */
+.menu-container {
+    position: relative;
+    height: 50px;
+    width: 150px;
+    margin: 0 15px;
+    background: rgb(39, 39, 39);
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.menu-container:hover {
+    background-color: rgb(39, 39, 39);
+    border: 1px solid white;
+}
+
+.menu-container a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+}
+
+/* Dropdown stijl */
+.menu-container .dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #444;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1;
+}
+
+.menu-container .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-container .dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.menu-container .dropdown-content a:hover {
+    background-color: #575757;
+    color: #ffd700;
+}
+
+/* Laat dropdown zien bij hover */
+.menu-container:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.1s;
+}
+
+/* Zorg ervoor dat dropdown zichtbaar blijft */
+.menu-container:hover .dropdown-content,
+.menu-container .dropdown-content:hover {
+    display: block;
+}
+
+
+
+
+
+
+/*home*/
+
+/*main*/
+.main {
+    color: white;
+}
+
+/* Start sectie container */
+.start-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+/* Overlay voor tekst en knop boven de afbeelding */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Stijl voor de titel */
+.overlay-text h1 {
+    font-size: 2.5rem;
+    margin: 0.5em 0;
+}
+
+/* Stijl voor de paragraaf */
+.overlay-text p {
+    font-size: 1.2rem;
+    margin: 0.5em 0;
+}
+
+/* Stijl voor de knop */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+/* Hover-effect voor de knop */
+.cta-button:hover {
+    background-color: #ff2d00;
+    color: black;
+}
+
+
+
+
+
+
+
+/*contact*/
+
+.text {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
