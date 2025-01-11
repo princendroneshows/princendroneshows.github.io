@@ -16,10 +16,12 @@
 <table style="width: 100%;" class="table1">
     <tr>
         <td style="width: 40%;">
+            <br id="email">
             <img src="mail_icon.png" alt="mail_icon" width="30%">
             <br><br>
             <a href="mailto:princen.droneshows@gmail.com" class="mail" style="color: white; font-size: 130%;">Neem contact op via mail</a>
-            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br>
+            <br id="telefoon">
             <img src="telefoon_icon.png" alt="mail_icon" width="30%">
             <br><br>
             <a href="tel:+32478820272" class="phone-link" style="color: white; font-size: 130%;">Neem contact op via telefoon: +32 4 78820272</a>
@@ -83,6 +85,13 @@
     </tr>
 </table>
 
+<br id="social">
+<div>
+    <p class="text">instagram</p>
+    <p class="text">facebook</p>
+    <p class="text">twitter</p>
+</div>
+
 </div>
 
 <!-- voor verzenden van gegevens -->
@@ -105,24 +114,6 @@
         dateFormat: "Y-m-d", // Formaat: Jaar-Maand-Dag
         minDate: "today", // Start bij vandaag
     });
-</script>
-
-<script>
-    window.onload = function() {
-        // Kijk of er een fragment in de URL is
-        const hash = window.location.hash;
-        
-        // Als er een hash is (bijv. #section2), scroll dan naar het element met dat id
-        if (hash) {
-            // Zoek het element met de id gelijk aan het fragment
-            const section = document.querySelector(hash);
-            
-            // Als dat element bestaat, scroll dan naar dat element
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    };
 </script>
 
 <script>
