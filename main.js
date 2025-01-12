@@ -61,38 +61,3 @@
   }
 
   tick();
-
-  
-
-
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Voorkom standaard verzending
-
-  // Haal waarden uit de velden
-  const name = this.user_name.value.trim();
-  const email = this.user_email.value.trim();
-  const date = this.event_date.value.trim();
-  const location = this.event_location.value.trim();
-  const phone = this.user_phone.value.trim();
-
-  // Controleer of de naam minstens twee woorden bevat
-  const nameWords = name.split(' ');
-  if (nameWords.length < 2) {
-      alert('Vul minstens twee woorden in voor de naam (voor- en achternaam).');
-      return;
-  }
-
-  // Controleer of alle verplichte velden zijn ingevuld
-  if (!name || !email || !date || !location || !phone) {
-      alert('Vul alle verplichte velden in!');
-      return;
-  }
-
-  // Als alle validaties slagen, verstuur het formulier via EmailJS
-  emailjs.sendForm('service_7oj71bb', 'template_mvyzwph', this)
-      .then(function() {
-          alert('E-mail succesvol verzonden!');
-      }, function(error) {
-          alert('Er is een fout opgetreden: ' + JSON.stringify(error));
-      });
-});

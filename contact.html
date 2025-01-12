@@ -94,9 +94,6 @@
 
 </div>
 
-<!-- voor verzenden van gegevens -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
 <!-- normale wijzing naar script -->
 <script src="main.js"></script>
 
@@ -129,6 +126,48 @@
             }
         }
     };
+</script>
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+    // Initialiseer EmailJS met je publieke sleutel
+    emailjs.init('JD76uOnVKsZNvmRG6');
+
+    // Voeg de submit-handler toe aan het formulier
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Voorkom standaard verzending
+
+        // Haal waarden uit de velden
+        const name = this.user_name.value.trim();
+        const email = this.user_email.value.trim();
+        const date = this['event-date'].value.trim();
+        const location = this.event_location.value.trim();
+        const phone = this.user_phone.value.trim();
+
+        // Controleer of de naam minstens twee woorden bevat
+        const nameWords = name.split(' ');
+        if (nameWords.length < 2) {
+            alert('Vul minstens twee woorden in voor de naam (voor- en achternaam).');
+            return;
+        }
+
+        // Controleer of alle verplichte velden zijn ingevuld
+        if (!name || !email || !date || !location || !phone) {
+            alert('Vul alle verplichte velden in!');
+            return;
+        }
+
+        // Als alle validaties slagen, verstuur het formulier via EmailJS
+        emailjs.sendForm('service_7oj71bb', 'template_mvyzwph', this)
+            .then(function() {
+                alert('E-mail succesvol verzonden!');
+            }, function(error) {
+                console.error('Error tijdens het verzenden:', error);
+                alert('Er is een fout opgetreden: ' + error.text);
+            });
+    });
 </script>
 
 
