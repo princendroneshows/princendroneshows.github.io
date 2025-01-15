@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="icon" href="...">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div class="circle"></div>
+
+<main class="about-section">
+    <!-- Eerste sectie: Afbeelding links, tekst rechts -->
+    <div class="about-row">
+        <div class="image-container">
+            <img src="logo2.png" alt="Afbeelding 1">
+        </div>
+        <div class="text-container">
+            <h2>Onze Geschiedenis</h2>
+            <p>
+                ...
+            </p>
+        </div>
+    </div>
+
+    <!-- Tweede sectie: Tekst links, afbeelding rechts -->
+    <div class="about-row reverse">
+        <div class="image-container">
+            <img src="logo.png" alt="Afbeelding 2">
+        </div>
+        <div class="text-container">
+            <h2>Onze motivatie</h2>
+            <p>
+                ...
+            </p>
+        </div>
+    </div>
+
+    <!-- Derde sectie: Afbeelding links, tekst rechts -->
+    <div class="about-row">
+        <div class="image-container">
+            <img src="mail_icon.png" alt="Afbeelding 3">
+        </div>
+        <div class="text-container">
+            <h2>Onze Toekomst</h2>
+            <p>
+                ...
+            </p>
+        </div>
+    </div>
+
+    <!-- Vierde sectie: Tekst links, afbeelding rechts -->
+    <div class="about-row reverse">
+        <div class="image-container">
+            <img src="telefoon_icon.png" alt="Afbeelding 4">
+        </div>
+        <div class="text-container">
+            <h2>...</h2>
+            <p>
+                ...
+            </p>
+        </div>
+    </div>
+</main>
+
+<div class='video-wrap'>
+    <video autoplay muted playsinline loop>
+      <source src="DJI_0256.MP4" type="video/mp4">
+    </video>
+</div>
+  
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+<style>
+
+
+
+
+/* Secties */
+.about-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.about-row.reverse {
+    flex-direction: row-reverse; /* Afbeelding rechts, tekst links */
+}
+
+/* Afbeeldingen */
+.image-container {
+    flex: 1; /* 50% van de breedte */
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%; /* Afbeelding neemt volledige containerbreedte */
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tekst */
+.text-container {
+    flex: 1; /* 50% van de breedte */
+    padding: 0 1rem;
+}
+
+.text-container h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.text-container p {
+    color: #555;
+    margin: 0;
+}
+
+/* Responsief ontwerp */
+@media (max-width: 768px) {
+    .about-row {
+        flex-direction: column; /* Alles stapelt onder elkaar */
+        text-align: center;
+    }
+
+    .about-row.reverse {
+        flex-direction: column; /* Reverse maakt geen verschil meer */
+    }
+
+    .image-container {
+        margin-bottom: 1rem;
+    }
+}
+</style>
+
+<!-- normale wijzing naar script -->
+<script src="main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+<script type="text/javascript">
+  new ScrollyVideo({
+    scrollyVideoContainer: "scrolly-video",
+    src: "DJI_0256.MP4"
+  });
+</script>
+
+</html>

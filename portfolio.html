@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Video Player</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .spacer-top {
+            height: 100vh;
+        }
+
+        .video-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .spacer-bottom {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="spacer-top"></div>
+    <div class="video-container">
+        <video id="myVideo" muted>
+            <source src="DJI_0256.MP4" type="video/mp4">
+            Je browser ondersteunt geen video.
+        </video>
+    </div>
+    <div class="spacer-bottom"></div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const videoContainer = document.querySelector('.video-container');
+        
+        // Video eerst laden
+        video.load();
+        video.pause();
+
+        // Wacht tot de video metadata geladen is
+        video.addEventListener('loadedmetadata', () => {
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            
+            // Scroll handler
+            window.addEventListener('scroll', () => {
+                // Bereken de scroll progress (0 tot 1)
+                const scrollProgress = window.pageYOffset / maxScroll;
+                
+                // Bereken de juiste tijd in de video
+                const targetTime = video.duration * scrollProgress;
+                
+                // Check of de video in beeld is
+                const rect = videoContainer.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible) {
+                    // Alleen updaten als er een significant verschil is
+                    if (Math.abs(video.currentTime - targetTime) > -10000000000000000000000000000000000000000000000000000000000000000000000000000000) {
+                        video.currentTime = targetTime;
+                    }
+                }
+            });
+        });
+
+        // Stop video wanneer we stoppen met scrollen
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                video.pause();
+            }, 50);
+        });
+    </script>
+</body>
+</html>
